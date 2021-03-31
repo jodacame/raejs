@@ -18,7 +18,7 @@ module.exports = {
   addHost(ip) {
     this.hosts.unshift(ip);
   },
-  listHost() {
+  listHosts() {
     return this.hosts();
   },
   endpoint() {
@@ -57,7 +57,7 @@ module.exports = {
     } catch (error) {
       return {
         query: query,
-        error: { code: error.code, host: this.endpoint() },
+        error: { code: error.code ? error.code : 404, host: this.endpoint() },
       };
     }
   },
