@@ -19,7 +19,7 @@ if(!response.error){
 }
 ```
 ### Add custom RAE Host
-This library jump cloudflare protection sending direct request to RAE server. If you need change host RAE server IP maybe you need use this method.
+This library skip cloudflare protection sending direct request to RAE server. If you need change host RAE server IP maybe you need use this method.
 ```js
 const raejs = require('@jodacame/raejs');
 raejs.addHost('XXX.XXX.XXX.XXX');
