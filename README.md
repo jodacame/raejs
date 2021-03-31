@@ -1,6 +1,6 @@
 
 ## Description
-Tiny library to access the well-known spanish RAE dictionary programatically.
+Tiny library to access the well-known spanish RAE dictionary programmatically.
 
 ### Unofficial Library
 
