@@ -6,7 +6,7 @@ Tiny library to access the well-known spanish RAE dictionary programatically.
 
 ### Installation
 ```bash
-npm i raejs
+npm i @jodacame/raejs
 ```
 
 ### Usage
