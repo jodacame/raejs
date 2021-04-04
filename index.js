@@ -19,7 +19,7 @@ module.exports = {
     this.hosts.unshift(ip);
   },
   listHosts() {
-    return this.hosts();
+    return this.hosts;
   },
   endpoint() {
     return `https://${this.hosts[this.host]}`;
