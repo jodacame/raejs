@@ -1,6 +1,6 @@
 {
   "name": "@jodacame/raejs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Tiny library to access the well-known spanish RAE dictionary programatically.",
   "main": "index.js",
   "scripts": {
