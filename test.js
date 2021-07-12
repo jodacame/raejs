@@ -1,5 +1,5 @@
 const raejs = require("./index");
 
-raejs.search("elefante").then((result) => {
+raejs.search("atendedora").then((result) => {
   console.log(result);
 });

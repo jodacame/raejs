@@ -1,4 +1,5 @@
 const axios = require("axios");
+const https = require("https");
 module.exports = {
   host: 0,
   hosts: ["85.62.86.187", "193.145.222.23"],
@@ -26,8 +27,12 @@ module.exports = {
   },
   async search(query) {
     try {
+      const agent = new https.Agent({
+        rejectUnauthorized: false,
+      });
       const { data } = await axios.get(`${this.endpoint()}/${query}`, {
         headers: this.headers,
+        httpsAgent: agent,
       });
 
       const articles = data.match(
@@ -45,11 +50,16 @@ module.exports = {
               this.patters[key].multiple ? "gi" : "i"
             )
           );
-          if (this.patters[key].multiple)
-            def[key] = r.map((e) => {
-              return this.clean(e);
-            });
-          else def[key] = this.clean(r ? r[1] : "");
+
+          if (this.patters[key].multiple) {
+            if (r) {
+              def[key] = r.map((e) => {
+                return this.clean(e);
+              });
+            } else {
+              def[key] = [];
+            }
+          } else def[key] = this.clean(r ? r[1] : "");
         });
         response.push(def);
       });
